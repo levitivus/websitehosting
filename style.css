@@ -1,0 +1,242 @@
+/* Basic Reset & Typography */
+:root {
+    --primary-color: #2c3e50;
+    --accent-color: #3498db;
+    --text-color: #333;
+    --bg-color: #f4f4f4;
+    --section-bg-color: #ffffff;
+    --font-family: 'Montserrat', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+h1 { font-size: 3em; color: #fff; }
+h2 { font-size: 2.5em; text-align: center; }
+p { margin-bottom: 15px; }
+
+a {
+    text-decoration: none;
+    color: var(--accent-color);
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--primary-color);
+}
+
+/* Header & Navigation */
+.main-header {
+    background: var(--primary-color);
+    color: #fff;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo img {
+    height: 40px;
+    filter: brightness(0) invert(1);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: #fff;
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: var(--accent-color);
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://source.unsplash.com/random/1600x900/?media,news,desk') no-repeat center center/cover;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+
+.hero-content {
+    animation: fadeIn 1.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Sections */
+.section {
+    padding: 80px 0;
+}
+
+.section:nth-of-type(odd) {
+    background-color: var(--section-bg-color);
+}
+
+.section:nth-of-type(even) {
+    background-color: var(--bg-color);
+}
+
+/* Media Mentions Grid */
+.media-mentions-section h2 {
+    margin-bottom: 50px;
+}
+
+.media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.media-item {
+    background-color: var(--section-bg-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden;
+    display: block;
+}
+
+.media-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.media-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.media-text {
+    padding: 20px;
+}
+
+.media-text h3 {
+    font-size: 1.25em;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.media-text p {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.read-more {
+    display: inline-flex;
+    align-items: center;
+    font-weight: 600;
+    color: var(--accent-color);
+}
+
+.read-more i {
+    margin-left: 8px;
+    font-size: 0.9em;
+    transition: margin-left 0.3s;
+}
+
+.media-item:hover .read-more i {
+    margin-left: 12px;
+}
+
+/* Contact Section */
+.contact-info {
+    text-align: center;
+}
+
+.contact-info p {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.contact-info .fas, .contact-info .fab {
+    margin-right: 10px;
+    color: var(--accent-color);
+}
+
+.social-links a {
+    font-size: 1.5em;
+    margin: 0 10px;
+    color: var(--primary-color);
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--accent-color);
+}
+
+/* Footer */
+.main-footer {
+    background-color: var(--primary-color);
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 { font-size: 2.5em; }
+    h2 { font-size: 2em; }
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+    .nav-links {
+        margin-top: 15px;
+    }
+    .nav-links li {
+        margin: 0 10px;
+    }
+    .media-item img {
+        height: 120px;
+    }
+}
